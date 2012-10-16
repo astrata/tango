@@ -41,7 +41,7 @@ func initCommand() {
 
 	if workspace == "" {
 		fmt.Printf("Initializing Tango! workspace in %s.\n", tangoCwd)
-		copyAll(tangoPath+PS+"sample-app", tangoCwd)
+		copyAll(tangoPath+PS+"tango-base-app", tangoCwd)
 	} else {
 		log.Printf("A Tango! workspace already exists in %s.\n", workspace)
 	}
