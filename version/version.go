@@ -24,7 +24,7 @@
   WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-package tango
+package version
 
-const Version = "0.9"
-const VersionString = "No. I - Prelude"
+const Code = "0.9"
+const String = "Prelude"

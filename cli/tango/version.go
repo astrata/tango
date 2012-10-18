@@ -28,7 +28,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/astrata/tango"
+	"github.com/astrata/tango/version"
 )
 
 func init() {
@@ -36,5 +36,5 @@ func init() {
 }
 
 func versionCommand() {
-	fmt.Printf("%s\n", tango.Version)
+	fmt.Printf("%s\n", version.Code)
 }

@@ -29,7 +29,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/astrata/tango"
+	"github.com/astrata/tango/version"
 	"io"
 	"io/ioutil"
 	"log"
@@ -165,7 +165,7 @@ func checkUp() bool {
 
 		for _, path := range paths {
 			testPath := path + PS + "src" + PS + "github.com" + PS + "astrata" + PS + "tango"
-			_, err := os.Stat(testPath + PS + "version.go")
+			_, err := os.Stat(testPath + PS + "version" + PS + "version.go")
 			if err == nil {
 				tangoPath = testPath
 				break
@@ -200,7 +200,7 @@ func checkUp() bool {
 }
 
 func banner() {
-	fmt.Printf("Tango! (%s) - by Astrata\n", tango.VersionString)
+	fmt.Printf("Tango! (%s) - by Astrata\n", version.String)
 	fmt.Println("")
 }
 
