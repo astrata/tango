@@ -53,9 +53,6 @@ type Context struct {
 	// Server
 	Server *Server
 
-	Get  Value
-	Post Value
-
 	Params Value
 
 	Cookies Value
