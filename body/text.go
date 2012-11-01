@@ -28,6 +28,7 @@ package body
 
 import (
 	"fmt"
+	"bytes"
 	"net/http"
 )
 
@@ -58,7 +59,12 @@ func (self *textContent) Status() int {
 
 // Sets the request contents.
 func (self *textContent) Set(value interface{}) {
-	self.content = []byte(fmt.Sprintf("%v", value))
+	switch value.(type) {
+	case *bytes.Buffer:
+		self.content = value.(*bytes.Buffer).Bytes()
+	default:
+		self.content = []byte(fmt.Sprintf("%v", value))
+	}
 }
 
 // Returns the request contents that are going to be written.
