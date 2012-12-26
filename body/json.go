@@ -57,8 +57,8 @@ func (self *jsonContent) Header() http.Header {
 		if self.data.(map[string]interface{})["error"] != nil {
 			self.status = 400
 		}
-	case sugar.Tuple:
-		if self.data.(sugar.Tuple)["error"] != nil {
+	case sugar.Map:
+		if self.data.(sugar.Map)["error"] != nil {
 			self.status = 400
 		}
 	}

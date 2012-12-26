@@ -39,7 +39,7 @@ import (
 var ItemsPerPage = 9
 
 // Creates a pager from a db.Collection.
-func Pager(collection db.Collection, conds db.Cond, page int) sugar.Tuple {
+func Pager(collection db.Collection, conds db.Cond, page int) sugar.Map {
 
 	total, _ := collection.Count(conds)
 
@@ -65,9 +65,9 @@ func Pager(collection db.Collection, conds db.Cond, page int) sugar.Tuple {
 		db.Limit(ItemsPerPage),
 	)
 
-	response := sugar.Tuple{
+	response := sugar.Map{
 		"total": total,
-		"pager": sugar.Tuple{
+		"pager": sugar.Map{
 			"count":   pages,
 			"size":    ItemsPerPage,
 			"next":    next,
@@ -93,7 +93,7 @@ func Config(name string) (string, db.DataSource) {
 
 	source := db.DataSource{}
 
-	for key, val := range data.(sugar.Tuple) {
+	for key, val := range data.(sugar.Map) {
 		switch key {
 		case "host":
 			source.Host = fmt.Sprintf("%v", val)
