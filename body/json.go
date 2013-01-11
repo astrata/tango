@@ -45,7 +45,7 @@ func Json() Body {
 	self := &jsonContent{}
 	self.status = 200
 	self.header = http.Header{}
-	self.header.Add("Content-type", "text/plain; charset=utf8")
+	self.header.Add("Content-type", "application/json; charset=utf8")
 	return self
 }
 
